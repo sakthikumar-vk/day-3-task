@@ -3,13 +3,11 @@ var request = new XMLHttpRequest();
  request.send();
  request.onload=function(){
     var result = JSON.parse(request.response);
-    
-    
-    result.forEach(function(country) {
-        console.log("Country: " + country.name.common);
-        console.log("Population: " + country.population);
-        console.log("Region: " + country.region);
-        console.log("Subregion: " + country.subregion);
-        console.log("----------------------");
-      });
+    for( i=0;i<result.length;i++){
+        console.log(result[i].name);
+        console.log(result[i].region);
+        console.log(result[i].subregion);
+        console.log(result[i].population);
     }
+    
+ }
